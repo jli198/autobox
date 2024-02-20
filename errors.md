@@ -2,7 +2,7 @@
 
 from lambda_function.py:
 
-'''
+```
 {
   "errorMessage": "The config profile (default) could not be found",
   "errorType": "ProfileNotFound",
@@ -23,5 +23,5 @@ from lambda_function.py:
     "  File \"/var/lang/lib/python3.12/site-packages/botocore/session.py\", line 422, in get_scoped_config\n    raise ProfileNotFound(profile=profile_name)\n"
   ]
 }
-'''
+```
 
