@@ -19,6 +19,10 @@ def detect_faces(bucket, key):
 '''
 
 def detect_labels(bucket, key):
+    
+    session = boto3.Session(profile_name='default')
+    client = session.client('rekognition')
+	
     response = rekognition.detect_labels(Image={"S3Object": {"Bucket": bucket, "Name": key}})
 
     # Sample code to write response to DynamoDB table 'MyTable' with 'PK' as Primary Key.
