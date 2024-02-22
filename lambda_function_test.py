@@ -10,6 +10,7 @@ print('Loading function')
 rekognition = boto3.client('rekognition', region_name='us-east-1')
 
 
+
 # --------------- Helper Functions to call Rekognition APIs ------------------
 
 '''
@@ -20,9 +21,9 @@ def detect_faces(bucket, key):
 
 def detect_labels(bucket, key):
     
-    session = boto3.Session(profile_name='default')
-    client = session.client('rekognition')
-	
+    session = boto3.Session()
+    client = session.client('rekognition', region_name='us-east-1')
+    
     response = rekognition.detect_labels(Image={"S3Object": {"Bucket": bucket, "Name": key}})
 
     # Sample code to write response to DynamoDB table 'MyTable' with 'PK' as Primary Key.
@@ -41,9 +42,9 @@ def index_faces(bucket, key):
 '''
 
 def detect_text(photo, bucket):
-
-    session = boto3.Session(profile_name='default')
-    client = session.client('rekognition')
+    
+    session = boto3.Session()
+    client = session.client('rekognition', region_name='us-east-1')
 
     response = client.detect_text(Image={'S3Object': {'Bucket': bucket, 'Name': photo}})
 
