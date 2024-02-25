@@ -1,0 +1,3 @@
+aws rekognition detect-text --image "{\"S3Object\ {\"Bucket\":\"autoboximages\",\"Name\":\"Head_Moderator.jpg\"}}" --region us-east-1
+
+aws rekognition detect-labels --image "{\"S3Object\":{\"Bucket\":\"autoboximages\",\"Name\":\"Head_Moderator.jpg\"}}" --region us-east-1
