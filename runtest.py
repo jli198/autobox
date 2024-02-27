@@ -1,3 +1,5 @@
+# Old script that uses SMTP gmail.
+
 from gpiozero import MotionSensor, Button, LED
 from picamera import PiCamera
 from email.mime.multipart import MIMEMultipart
