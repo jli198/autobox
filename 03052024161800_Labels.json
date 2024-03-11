@@ -1,0 +1,41 @@
+{
+    "Labels": [
+        {
+            "Name": "Text",
+            "Confidence": 99.38382720947266,
+            "Instances": [],
+            "Parents": [],
+            "Aliases": [],
+            "Categories": [
+                {
+                    "Name": "Text and Documents"
+                }
+            ]
+        },
+        {
+            "Name": "Paper",
+            "Confidence": 89.22826385498047,
+            "Instances": [],
+            "Parents": [],
+            "Aliases": [],
+            "Categories": [
+                {
+                    "Name": "Materials"
+                }
+            ]
+        },
+        {
+            "Name": "Money",
+            "Confidence": 60.75434875488281,
+            "Instances": [],
+            "Parents": [],
+            "Aliases": [],
+            "Categories": [
+                {
+                    "Name": "Everyday Objects"
+                }
+            ]
+        }
+    ],
+    "LabelModelVersion": "3.0"
+}
