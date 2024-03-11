@@ -6,6 +6,8 @@ import sys
 import subprocess
 import os
 from rekognition_detect import *
+from json_parse import *
+from image_rectangle import *
 
 pir = MotionSensor(4)
 
@@ -43,6 +45,9 @@ while True:
 	detect_text(BUCKET[5:-1], IMAGE_NAME, IMAGE_NAME[:-4])
 	time.sleep(1)
 	detect_labels(BUCKET[5:-1], IMAGE_NAME, IMAGE_NAME[:-4])
+	parsed_text = json_parse(IMAGE_NAME[:-4] + "_Text.json")
+	time.sleep(1)
+	word_location(IMAGE_NAME[:-4], parsed_text[1])
 	os.remove('/home/admin/'+IMAGE_NAME)
 	# os.remove('/home/admin/'+IMAGE_NAME[:-4]+'_Text.json')
 	# os.remove('/home/admin/'+IMAGE_NAME[:-4]+'_Labels.json')

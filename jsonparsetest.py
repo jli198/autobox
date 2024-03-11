@@ -1,6 +1,6 @@
 import json
 
-with open("awsjsontest.json", "r") as read_file:
+with open("Head_Moderator_Text.json", "r") as read_file:
     data = json.load(read_file)
     json_string = json.dumps(data)
     print(json_string + "\n")
@@ -9,10 +9,12 @@ with open("awsjsontest.json", "r") as read_file:
     word_count = 0
     word_list = []
     word_str = ""
+    bounding_box_list = []
     while True:
         try:
-            if json_details["TextDetections"][word_count]["Type"] == "LINE":
+            if json_details["TextDetections"][word_count]["Type"] == "WORD":
                 word_list.append(json_details["TextDetections"][word_count]["DetectedText"])
+                bounding_box_list.append(json_details["TextDetections"][word_count]["Geometry"]["BoundingBox"])
             word_count += 1
         except:
             break
