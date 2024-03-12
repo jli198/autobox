@@ -8,6 +8,7 @@ import os
 from rekognition_detect import *
 from json_parse import *
 from image_rectangle import *
+import cv2
 
 pir = MotionSensor(4)
 
@@ -41,6 +42,17 @@ while True:
 	CMD = "s3cmd put --acl-public %s %s" % (SRC_DIR, BUCKET)
 	print(CMD)
 	subprocess.call(CMD, shell=True)
+	time.sleep(1)
+	#sharpening image for better text identification
+        image = cv2.imread(IMAGE_NAME)
+        scale_percent = 200 # percent of original size
+        width = int(image.shape[1] * scale_percent / 100)
+        height = int(image.shape[0] * scale_percent / 100)
+        dim = (width, height)
+        image = cv2.resize(image, dim, interpolation=cv2.INTER_CUBIC)
+        kernel = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]]) 
+        sharpened_image = cv2.filter2D(image, -1, kernel) 
+        cv2.imwrite(IMAGE_NAME, sharpened_image) 
 	time.sleep(5)
 	detect_text(BUCKET[5:-1], IMAGE_NAME, IMAGE_NAME[:-4])
 	time.sleep(1)
