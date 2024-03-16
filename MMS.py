@@ -1,3 +1,6 @@
+"""
+Thank you to https://www.alfredosequeida.com/blog/how-to-send-text-messages-for-free-using-python-use-python-to-send-text-messages-via-email/
+"""
 import email, smtplib, ssl
 from providers import PROVIDERS
 
