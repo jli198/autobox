@@ -1,0 +1,48 @@
+{
+    "Labels": [
+        {
+            "Name": "Paper",
+            "Confidence": 99.97184753417969,
+            "Instances": [],
+            "Parents": [],
+            "Aliases": [],
+            "Categories": [
+                {
+                    "Name": "Materials"
+                }
+            ]
+        },
+        {
+            "Name": "Text",
+            "Confidence": 99.44404602050781,
+            "Instances": [],
+            "Parents": [],
+            "Aliases": [],
+            "Categories": [
+                {
+                    "Name": "Text and Documents"
+                }
+            ]
+        },
+        {
+            "Name": "Ticket",
+            "Confidence": 71.96067810058594,
+            "Instances": [],
+            "Parents": [
+                {
+                    "Name": "Paper"
+                },
+                {
+                    "Name": "Text"
+                }
+            ],
+            "Aliases": [],
+            "Categories": [
+                {
+                    "Name": "Text and Documents"
+                }
+            ]
+        }
+    ],
+    "LabelModelVersion": "3.0"
+}
