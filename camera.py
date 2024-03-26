@@ -48,7 +48,7 @@ while True:
 	subprocess.call(CMD, shell=True)
 	time.sleep(1)
 	#sharpening image for better text identification
-        image = cv2.imread(IMAGE_NAME)
+	image = cv2.imread(IMAGE_NAME)
         scale_percent = 200 # percent of original size
         width = int(image.shape[1] * scale_percent / 100)
         height = int(image.shape[0] * scale_percent / 100)

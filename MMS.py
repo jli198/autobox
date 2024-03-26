@@ -18,7 +18,7 @@ def send_mms(
     mime_maintype: str,
     mime_subtype: str,
     provider: str,
-    sender_credentials: tuple = ("autoboxproject@gmail.com", "{ADD PASSWORD}"),
+    sender_credentials: tuple = ("autoboxproject@gmail.com", "slwnbyuhllwonegh"),
     subject: str = "Autobox Alert",
     smtp_server: str = "smtp.gmail.com",
     smtp_port: int = 465,
@@ -54,11 +54,11 @@ def send_mms(
         email.login(sender_email, email_password)
         email.sendmail(sender_email, receiver_email, text)
 
-number = "{Chris Phone Number or Jason for that matter}"
+number = ""
 message = "Autobox Alert"
-provider = "{Chris mobile carrier}"
+provider = "Verizon"
 
-sender_credentials = ("autoboxproject@gmail.com", "{ADD PASSWORD HERE}")
+sender_credentials = ("autoboxproject@gmail.com", "PASSWORD")
 
 
 file_path = "{ADD FILEPATH}" 
