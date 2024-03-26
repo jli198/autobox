@@ -49,6 +49,7 @@ while True:
 	time.sleep(1)
 	#sharpening image for better text identification
 	image = cv2.imread(IMAGE_NAME)
+<<<<<<< HEAD
         scale_percent = 200 # percent of original size
         width = int(image.shape[1] * scale_percent / 100)
         height = int(image.shape[0] * scale_percent / 100)
@@ -57,6 +58,16 @@ while True:
         kernel = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]]) 
         sharpened_image = cv2.filter2D(image, -1, kernel) 
         cv2.imwrite(IMAGE_NAME, sharpened_image) 
+=======
+	scale_percent = 200 # percent of original size
+	width = int(image.shape[1] * scale_percent / 100)
+	height = int(image.shape[0] * scale_percent / 100)
+	dim = (width, height)
+	image = cv2.resize(image, dim, interpolation=cv2.INTER_CUBIC)
+	kernel = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]]) 
+	sharpened_image = cv2.filter2D(image, -1, kernel) 
+	cv2.imwrite(IMAGE_NAME, sharpened_image) 
+>>>>>>> 85e918b90c53eb3cdcca91758df337fb983ec4e3
 	time.sleep(5)
 	detect_text(BUCKET[5:-1], IMAGE_NAME, IMAGE_NAME[:-4])
 	time.sleep(1)
