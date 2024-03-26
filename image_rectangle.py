@@ -25,6 +25,7 @@ def word_location(image, bounding_boxes):
         ax.add_patch(rect)
         
     plt.show()
+    # make sure to rewrite and return the image with the bounding box information.
     return
 
 
