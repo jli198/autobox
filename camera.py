@@ -67,7 +67,6 @@ while True:
 	print(parsed_labels)
 	time.sleep(1)
 	word_location(IMAGE_NAME[:-4], parsed_text[1])
-	# TO-DO: rewrite the base image with the bounding box information from image_rectangle.py
 	message = "Detected Labels: " + parsed_labels + "\n" + "Deteced Text: " + parsed_text[0]
 	send_mms(number, message, SRC_DIR, "image", IMAGE_NAME[-4:], carrier)
 	os.remove('/home/admin/'+IMAGE_NAME)
