@@ -18,7 +18,7 @@ def send_mms(
     mime_maintype: str,
     mime_subtype: str,
     provider: str,
-    sender_credentials: tuple = ("autoboxproject@gmail.com", "slwnbyuhllwonegh"),
+    sender_credentials: tuple = ("autoboxproject@gmail.com", "{PASSWORD}"),
     subject: str = "Autobox Alert",
     smtp_server: str = "smtp.gmail.com",
     smtp_port: int = 465,
@@ -56,7 +56,7 @@ def send_mms(
 
 number = ""
 message = "Autobox Alert"
-provider = "Verizon"
+provider = ""
 
 sender_credentials = ("autoboxproject@gmail.com", "PASSWORD")
 
@@ -66,12 +66,12 @@ file_path = "{ADD FILEPATH}"
 mime_maintype = "image"
 mime_subtype = "jpeg"
 
-send_mms(
-    number,
-    message,
-    file_path,
-    mime_maintype,
-    mime_subtype,
-    provider,
-    sender_credentials,
-    )
+#send_mms(
+    #number,
+    #message,
+    #file_path,
+    #mime_maintype,
+    #mime_subtype,
+    #provider,
+    #sender_credentials,
+    #)

@@ -9,17 +9,18 @@ from rekognition_detect import *
 from json_parse import *
 from image_rectangle import *
 import cv2
+import numpy as np
 from MMS import send_mms
 
 pir = MotionSensor(4)
 
 IMAGE_NAME = dt.datetime.now().strftime('%m%d%Y%H%M%S')+ '.jpg'
 BUCKET = "s3://autoboximages/"
-SRC_DIR = '/home/admin/' + IMAGE_NAME # path may be wrong now
+SRC_DIR = '/home/admin/autobox/' + IMAGE_NAME # path may be wrong now
 DEST = BUCKET + "images/" # need to remake images folder in bucket
 CURRENT_DATE = dt.datetime.now().strftime('%m/%d/%Y %H:%M:%S')
-number = "ADD PHONE NUMBER HERE"
-carrier = "ADD MOBILE CARRIER HERE"
+number = ""
+carrier = ""
 
 
 def camera(file):
@@ -66,10 +67,10 @@ while True:
 	parsed_labels = json_parse_labels(IMAGE_NAME[:-4] + "_Labels.json")
 	print(parsed_labels)
 	time.sleep(1)
-	word_location(IMAGE_NAME[:-4], parsed_text[1])
-	message = "Detected Labels: " + parsed_labels + "\n" + "Deteced Text: " + parsed_text[0]
+	word_location(IMAGE_NAME, parsed_text[1])
+	message = "Detected Labels: " + parsed_labels + "\n" + "Detected Text: " + parsed_text[0]
 	send_mms(number, message, SRC_DIR, "image", IMAGE_NAME[-4:], carrier)
-	os.remove('/home/admin/'+IMAGE_NAME)
-	os.remove('/home/admin/'+IMAGE_NAME[:-4]+'_Text.json')
-	os.remove('/home/admin/'+IMAGE_NAME[:-4]+'_Labels.json')
+	os.remove('/home/admin/autobox/'+IMAGE_NAME)
+	os.remove('/home/admin/autobox/'+IMAGE_NAME[:-4]+'_Text.json')
+	os.remove('/home/admin/autobox/'+IMAGE_NAME[:-4]+'_Labels.json')
 	pir.wait_for_no_motion()
