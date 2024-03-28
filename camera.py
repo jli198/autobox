@@ -9,6 +9,7 @@ from rekognition_detect import *
 from json_parse import *
 from image_rectangle import *
 import cv2
+import numpy as np
 from MMS import send_mms
 
 pir = MotionSensor(4)
