@@ -16,6 +16,7 @@ def word_location(image, bounding_boxes):
 
     # Display the image
     ax.imshow(im)
+    plt.axis("off")
 
     for i in range(len(bounding_boxes)):
         # Create a Rectangle patch
@@ -24,7 +25,8 @@ def word_location(image, bounding_boxes):
         # Add the patch to the Axes
         ax.add_patch(rect)
         
-    plt.show()
+    #plt.show()
+    fig.savefig(image, bbox_inches="tight", pad_inches = 0)
     return
 
 

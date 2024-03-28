@@ -14,7 +14,7 @@ def json_parse_text_bounding_box(file):
         bounding_box_list = []
         while True:
             try:
-                if json_details["TextDetections"][word_count]["Type"] == "WORD":
+                if json_details["TextDetections"][word_count]["Type"] == "WORD" and json_details["TextDetections"][word_count]["Confidence"] >= 80:
                     word_list.append(json_details["TextDetections"][word_count]["DetectedText"])
                     bounding_box_list.append(json_details["TextDetections"][word_count]["Geometry"]["BoundingBox"])
                 word_count += 1
