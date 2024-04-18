@@ -38,7 +38,7 @@ def json_parse_labels(file):
         labels_str = ""
         while True:
             try:
-                if json_details["Labels"][label_count]["Confidence"] >= 80:
+                if json_details["Labels"][label_count]["Confidence"] >= 70:
                     label_list.append(json_details["Labels"][label_count]["Name"])
                 label_count += 1
             except:
