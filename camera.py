@@ -21,6 +21,8 @@ DEST = BUCKET + "images/" # need to remake images folder in bucket
 CURRENT_DATE = dt.datetime.now().strftime('%m/%d/%Y %H:%M:%S')
 number = ""
 carrier = ""
+number2 = ""
+carrier2 = ""
 
 
 def camera(file):
