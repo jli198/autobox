@@ -19,8 +19,8 @@ BUCKET = "s3://autoboximages/"
 SRC_DIR = '/home/admin/autobox/' + IMAGE_NAME # path may be wrong now
 DEST = BUCKET + "images/" # need to remake images folder in bucket
 CURRENT_DATE = dt.datetime.now().strftime('%m/%d/%Y %H:%M:%S')
-number = ""
-carrier = ""
+number1 = ""
+carrier1 = ""
 number2 = ""
 carrier2 = ""
 
