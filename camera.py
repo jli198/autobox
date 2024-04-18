@@ -71,7 +71,7 @@ while True:
 	time.sleep(1)
 	word_location(IMAGE_NAME, parsed_text[1])
 	message = "Detected Labels: " + parsed_labels + "\n" + "Detected Text: " + parsed_text[0]
-	send_mms(number, message, SRC_DIR, "image", IMAGE_NAME[-4:], carrier)
+	send_mms(number1, message1, SRC_DIR, "image", IMAGE_NAME[-4:], carrier)
 	os.remove('/home/admin/autobox/'+IMAGE_NAME)
 	os.remove('/home/admin/autobox/'+IMAGE_NAME[:-4]+'_Text.json')
 	os.remove('/home/admin/autobox/'+IMAGE_NAME[:-4]+'_Labels.json')
