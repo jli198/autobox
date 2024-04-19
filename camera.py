@@ -79,7 +79,7 @@ while True:
 		os.remove('/home/admin/autobox/'+IMAGE_NAME[:-4]+'_Labels.json')
 		pir.wait_for_no_motion()
 	except:
-		time.sleep(5)
+		time.sleep(15)
 		pir.wait_for_motion()
 		print("You moved")
 	
